@@ -1,5 +1,9 @@
 #include <VGAXUA.h>
 
+#if !defined(__AVR_ATmega2560__) || !defined(ATMEGA2560_MAXRES)
+  #error This example works only on ATMega2560 with ATMEGA2560_MAXRES defined
+#endif
+
 //image generated from 1BITIMAGE - by Sandro Maffiodo
 #define IMG_PIRATE_WIDTH 200
 #define IMG_PIRATE_BWIDTH 25

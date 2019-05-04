@@ -2,7 +2,7 @@
 VGAXUA Library for Arduino UNO (ATMega328) and Arduino MEGA (ATMega2560)
 Source code url: https://github.com/smaffer/vgaxua
 
-200x80px VGA framebuffer with 1 color
+192x80px VGA framebuffer with 1 color (or 200x240px on MEGA)
 
 COPYRIGHT (C) 2019 Sandro Maffiodo
 smaffer@gmail.com
@@ -120,14 +120,18 @@ public:
    * NOTE: pixels order is swapped (LSB-MSB) inside the same byte
    */
   static void copy(byte *src);
-  /**/
+  /*
+   * setExtendedColorsMask(mask)
+   *    mask: 2 bits, enable additional extended colors generation. These
+          2 bits will drive extended colors PINS: 6,7 for UNO, 30,31 for MEGA
+   */
   static void setExtendedColorsMask(byte mask);
   /*
    * bitblit(src, swidth, sheight, dx, dy, color)
    *    src: source data. each byte hold 8 pixels. Bits set as 1 are opaque, 
    *      0 are transparent
    *    swidth: source width in pixels. This is the number of horizontal bits
-   *      to be blitted and can be not a multiple of 8
+   *      to be blitted and can be an integer not a multiple of 8
    *    sheight: source height in pixels
    *    dx: destination x coordinate in pixels. can be negative
    *    dy: destination y coordinate in pixels. can be negative
@@ -175,6 +179,8 @@ public:
   /*
    * printSRAM(...)
    *    same as printPROGMEM but read str from SRAM
+   *
+   * NOTE: be carefull on Arduino UNO. SRAM has 128 bytes of free ram!
    */
   static void printSRAM(byte *fnt, byte glyphscount, byte fntheight, 
                 byte hspace, byte vspace, const char *str, int dx, int dy, 

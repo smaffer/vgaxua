@@ -105,7 +105,7 @@ VGAXUA vga;
 
 static const char str0[] PROGMEM="        VGAXUA Hello World!";
 static const char str1[] PROGMEM="        by Sandro Maffiodo";
-static char x=-VGAX_WIDTH;
+static int x=-VGAX_WIDTH;
 
 void setup() {
   vga.begin();

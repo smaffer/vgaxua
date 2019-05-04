@@ -1,5 +1,9 @@
 #include <VGAXUA.h>
 
+#if defined(__AVR_ATmega2560__)
+  #error This example is not designed for ATMega2560. Take a look to ImageHighRes example!
+#endif
+
 //image generated from 1BITIMAGE - by Sandro Maffiodo
 #define IMG_ELAINE_WIDTH 192
 #define IMG_ELAINE_BWIDTH 24
