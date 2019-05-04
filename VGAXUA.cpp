@@ -97,10 +97,10 @@ ISR(TIMER2_OVF_vect) {
     register byte *p=videoline;
     register byte c=*p++;;
   
-    //first 8px will turn on VMASK (for additional colors combinations)
+    //first 8px 
     #define drawF UDR0=c; UCSR0B=bit(TXEN0); c=*p++; nop;
 
-    //second 8px
+    //second 8px will turn on Extended Colors PINS
     #define drawS UDR0=c; EXTRACOLORPORT=vmask; nop; nop; nop; nop; nop; nop; nop; c=*p++;
 
     //draw 8px
@@ -234,7 +234,7 @@ void VGAXUA::setExtendedColorsMask(byte mask) {
 }
 void VGAXUA::delay(int msec) {
   while (msec--) {
-    unsigned cnt=16000/32; //TODO: use a more precise way to calculate cnt
+    unsigned cnt=16000/32;
     while (cnt--)
       asm volatile("nop\nnop\nnop\nnop\n");
   }
@@ -242,6 +242,6 @@ void VGAXUA::delay(int msec) {
 static unsigned long rand_next=1;
 
 unsigned VGAXUA::rand() {
-  rand_next = rand_next * 1103515245UL + 12345;
+  rand_next=rand_next * 1103515245UL + 12345;
   return rand_next+((unsigned)(rand_next / 65536) % 32768);
 }
