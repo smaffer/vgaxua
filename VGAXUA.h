@@ -21,6 +21,8 @@ HERE you can find some inline documentation about the VGAXUA library class
 #ifndef __VGAX_UART_library__
 #define __VGAX_UART_library__
 
+#define VGAXUA_VERSION "1.0.0"
+
 #ifdef ARDUINO
 #include <Arduino.h>
 #endif

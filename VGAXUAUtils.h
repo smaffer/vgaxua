@@ -1,5 +1,5 @@
 /*
-Utils for VGAX Library 
+Utils for VGAXUA Library 
 
 COPYRIGHT (C) 2019 Sandro Maffiodo
 smaffer@gmail.com
