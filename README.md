@@ -36,7 +36,7 @@ This library require an ATMega328 MCU (or higher) MCU. Does not work with ATTINY
 Based on the [VGA color video generation](http://www.gammon.com.au/forum/?id=11608) by [Nick Gammon](http://www.gammon.com.au).  
 AVR [interrupt dejitter](https://github.com/cnlohr/avrcraft/tree/master/terminal) from [Charles CNLOHR](https://github.com/cnlohr).  
 
-Check out my others VGA libraries: [VGAX](https://github.com/smaffer/vgax), [ESPVGAX](https://github.com/smaffer/espvgax).
+Check out my others VGA libraries: [VGAX](https://github.com/smaffer/vgax), [ESPVGAX](https://github.com/smaffer/espvgax), [ESPVGAX2](https://github.com/smaffer/espvgax2)
 
 ## Video
 
